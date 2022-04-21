@@ -60,7 +60,7 @@ func connect() {
 
 		fmt.Println("Successfully connected!")
 	}
-
+	// commented out for running test
 	/*func (db *DB) get_person() {
 
 		rows, err := db.db.Query(`SELECT "nimi", "ika" FROM "henkilot"`)
