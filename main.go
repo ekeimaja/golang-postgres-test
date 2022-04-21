@@ -10,13 +10,9 @@ import (
 	_ "github.com/lib/pq"
 )
 
-/*const (
-	addr := os.Getenv("address")
-	port := os.Getenv("port")
-	user := os.Getenv("user")
-	pass := os.Getenv("password")
-	dbname := os.Getenv("db")
-)*/
+type DB struct {
+	db sql.DB
+}
 
 func main() {
 	err := godotenv.Load(".env")
@@ -36,31 +32,52 @@ func connect() {
 	psqlconn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", addr, port, user, pass, dbname)
 
 	db, err := sql.Open("postgres", psqlconn)
-	CheckError(err)
-
-	rows, err := db.Query(`SELECT "nimi", "ika" FROM "henkilot"`)
-	CheckError(err)
-
-	defer rows.Close()
-	for rows.Next() {
-		var name string
-		var roll int
-
-		err = rows.Scan(&name, &roll)
-		CheckError(err)
-
-		fmt.Println(name, roll)
-	}
-
-	defer db.Close()
-
-	fmt.Println("Successfully connected!")
-}
-
-// func add_person() {}
-
-func CheckError(err error) {
 	if err != nil {
 		panic(err)
 	}
+
+	//db.get_person()
+
+	rows, err := db.Query(`SELECT "nimi", "ika" FROM "henkilot"`)
+	if err != nil {
+		panic(err)
+	}
+
+	defer rows.Close()
+
+	for rows.Next() {
+		var name string
+		var age int
+
+		err = rows.Scan(&name, &age)
+		if err != nil {
+			panic(err)
+		}
+
+		fmt.Println(name, age)
+
+		defer db.Close()
+
+		fmt.Println("Successfully connected!")
+	}
+
+	/*func (db *DB) get_person() {
+
+		rows, err := db.db.Query(`SELECT "nimi", "ika" FROM "henkilot"`)
+		CheckError(err)
+
+		defer rows.Close()
+		for rows.Next() {
+			var name string
+			var age int
+
+			err = rows.Scan(&name, &age)
+			CheckError(err)
+
+			fmt.Println(name, age)
+		}
+	}*/
+
+	// func add_person() {}
+
 }
