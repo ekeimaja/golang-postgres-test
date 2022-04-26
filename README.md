@@ -4,6 +4,10 @@ Postgres CRUD API created in Golang for learning purposes. I try to to this a li
 
 ## devlog
 
+26.04.2022 Studied Svelte
+
+25.04.2022 Studied a bit flexbox
+
 24.04.2022 Studied flexbox more. Maybe I succeed to build a decent frontend with it.
 
 23.04.2022: I tried to create layout with Svelte and flexbox. Again reminder that just by assuming how things work is bad practice.
