@@ -4,6 +4,8 @@ Postgres CRUD API created in Golang for learning purposes. I try to to this a li
 
 ## devlog
 
+27.04.2022 Nothing done related to the project because of migraine
+
 26.04.2022 Studied Svelte
 
 25.04.2022 Studied a bit flexbox
