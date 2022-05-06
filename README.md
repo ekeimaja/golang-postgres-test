@@ -4,19 +4,9 @@ Postgres CRUD API created in Golang for learning purposes. I try to to this a li
 
 ## devlog
 
-03.05.2022 on a cruise
-
-02.05.2022 on a cruise
-
-01.05.2022 celebrated the 1st of may
+06.05.2022 learning creating server both with vanilla Go and Fiber
 
 30.04.2022 Studied a bit making CRUD with Fiber. Mainly celebrated the 1st of may
-
-29.04.2022 Nothing done related to the project because of migraine, had to eat Maxalt and Ibuprofen like candy
-
-28.04.2022 Nothing done related to the project because of migraine
-
-27.04.2022 Nothing done related to the project because of migraine
 
 26.04.2022 Studied Svelte
 
